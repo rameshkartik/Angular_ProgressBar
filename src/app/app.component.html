@@ -14,8 +14,33 @@
     <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
   </li>
   <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
+    <h2><a target="_blank" rel="noopener"  href="https://blog.angular.io/">Angular blog</a></h2>
   </li>
 </ul>
+<ul>
+    <label>PageName </label>
+     <textarea id="txtPageName">DriverUpdate_License</textarea>
+     
+</ul>
+<ul>
+    <label>Address </label>
+     <textarea id="txtAddress">4</textarea>
+</ul>
+
+
+<button (click)="addPage('DriverUpdate_DOB',2,4)">Set</button>
+<button (click)="getPage('DriverUpdate_DOB')">Get</button>
+<div class="right" *ngIf="pages">
+
+  <h3>pages</h3>
+  <ul>
+    <li *ngFor="let page of pages | async">
+      <a [href]="pageName" target="_blank">{{ page.pageName }} </a>
+      <a [href]="pageName" target="_blank">{{ page.Address }} </a>
+      <a [href]="pageCount" target="_blank">{{ page.PageCount }} </a>
+    </li>
+  </ul>
+
+</div>
 
 <router-outlet></router-outlet>
